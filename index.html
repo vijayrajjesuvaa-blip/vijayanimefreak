@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/jpeg"
+        href="https://static.vecteezy.com/system/resources/previews/009/005/132/non_2x/vrj-logo-vrj-letter-vrj-letter-logo-design-initials-vrj-logo-linked-with-circle-and-uppercase-monogram-logo-vrj-typography-for-technology-business-and-real-estate-brand-vector.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <style>
+        body {
+            background-color: rgb(67, 114, 243);
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+
+        .box {
+            width: 300px;
+            padding: 30px;
+            justify-content: center;
+            align-content: center;
+            background-color: white;
+            border-radius: 10px;
+            color: black;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            height: 35px;
+            margin: 10px auto;
+            background-color: rgb(67, 114, 243);
+            color: white;
+            padding: 1px;
+            font-size: 15px;
+            border-radius: 4px;
+
+        }
+
+        .input {
+            width: 100%;
+            height: 20px;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 4px;
+            border-color: rgb(236, 233, 233);
+        }
+
+        .custom-underline {
+            text-decoration: underline;
+            text-decoration-color: blue;
+        }
+    </style>
+</head>
+<script>
+    function validateForm() {
+        var name = document.getElementById("name");
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirm-password").value;
+        console.log('Name:', name.value);
+        console.log('Email:', email);
+        console.log('Password:', password);
+        console.log('Confirm Password:', confirmPassword);
+        if (name === "" || email === "" || password === "" || confirmPassword === "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            alert("Enter a valid email address");
+            return false;
+        }
+        var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+        if (!passwordPattern.test(password)) {
+            alert("Password must contain uppercase, lowercase, number, special character and minimum 8 characters");
+            return false;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        window.location.href = "login1.html";
+        return false;
+    }
+</script>
+
+<body>
+
+    <div class="box">
+
+        <h1 style="text-align: left; font-size: 20px;"><span class="custom-underline">Re</span>gistration</h1><br>
+        <form onsubmit="return validateForm();">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <input class="input" id="name" placeholder="Enter your name" type="text" name="enter your name"
+                    required>
+                <input class="input" id="email" placeholder="Enter your email" type="email" name="enter your email"
+                    required>
+                <input class="input" id="password" placeholder="Create password" type="password"
+                    name="enter your password" required>
+                <input class="input" id="confirm-password" placeholder="Confirm password" type="password"
+                    name="confirm your password" required>
+            </div><br>
+            <div style="display: flex;">
+                <input type="checkbox" name="terms" required>
+                <label for="terms" style="font-size: 14px; margin-top: 5px; color: rgb(110, 109, 109);">I agree all
+                    terms & conditions</label>
+            </div>
+            <button>Register now</button>
+            <p style="text-align: center; font-size: 14px;"> Already have an account? <a href="login1.html"
+                    style="text-decoration: none; color: rgb(74, 74, 232);">Login now</a></p>
+        </form>
+    </div>
+</body>
+
+</html>
