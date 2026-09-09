@@ -57,10 +57,13 @@
         var password = document.getElementById("password").value;
         console.log('Email:', email);
         console.log('Password:', password);
-        // if (email === "" || password === "" ) {
-        //     alert("Please fill in all fields.");
-        //     return false;
-        // }
+        if (email === "vrj@gmail.com" && password === "Vrj@1234" ) {
+          window.location.href = "opening.html";
+          return false;
+        }
+        else{
+            alert("Enter a valid email address and password");
+        }
         // var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         // if (!emailPattern.test(email)) {
@@ -73,13 +76,6 @@
         //     alert("Password must contain uppercase, lowercase, number, special character and minimum 8 characters");
         //     return false;
         // }
-        if(passwordPattern === "Vrj@1234"){
-            alert("success");
-            window.location.href = "opening.html";
-            return false;
-        }
-        // window.location.href = "opening.html";
-        // return false;
     }
 </script>
 <body>
