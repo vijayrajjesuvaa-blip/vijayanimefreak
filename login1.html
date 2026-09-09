@@ -57,22 +57,22 @@
         var password = document.getElementById("password").value;
         console.log('Email:', email);
         console.log('Password:', password);
-        if (email === "" || password === "" ) {
-            alert("Please fill in all fields.");
-            return false;
-        }
-        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // if (email === "" || password === "" ) {
+        //     alert("Please fill in all fields.");
+        //     return false;
+        // }
+        // var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if (!emailPattern.test(email)) {
-            alert("Enter a valid email address");
-            return false;
-        }
-        var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+        // if (!emailPattern.test(email)) {
+        //     alert("Enter a valid email address");
+        //     return false;
+        // }
+        // var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
 
-        if (!passwordPattern.test(password)) {
-            alert("Password must contain uppercase, lowercase, number, special character and minimum 8 characters");
-            return false;
-        }
+        // if (!passwordPattern.test(password)) {
+        //     alert("Password must contain uppercase, lowercase, number, special character and minimum 8 characters");
+        //     return false;
+        // }
         if(passwordPattern != "Vrj@1234"){
             alert("wrong password");
             return false;
