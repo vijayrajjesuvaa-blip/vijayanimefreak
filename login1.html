@@ -73,12 +73,13 @@
         //     alert("Password must contain uppercase, lowercase, number, special character and minimum 8 characters");
         //     return false;
         // }
-        if(passwordPattern != "Vrj@1234"){
-            alert("wrong password");
+        if(passwordPattern === "Vrj@1234"){
+            alert("success");
+            window.location.href = "opening.html";
             return false;
         }
-        window.location.href = "opening.html";
-        return false;
+        // window.location.href = "opening.html";
+        // return false;
     }
 </script>
 <body>
